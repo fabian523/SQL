@@ -1,0 +1,26 @@
+---Create a shoe store database 
+
+CREATE TABLE shoes (id INTEGER PRIMARY KEY, brand TEXT, price INTEGER, style TEXT, popularity INTEGER);
+
+INSERT INTO shoes VALUES (1, "nike", 100, "low_top", 95);
+INSERT INTO shoes VALUES (2, "adidas", 85, "high_top", 91);
+INSERT INTO shoes VALUES (3, "new_balance", 89, "low_top", 90);
+INSERT INTO shoes VALUES (4, "converse", 80, "high_top", 89);
+INSERT INTO shoes VALUES (5, "reebok", 75, "low_top", 80);
+INSERT INTO shoes VALUES (6, "puma", 72, "low_top", 80);
+INSERT INTO shoes VALUES (7, "timberland", 74, "high_top", 79);
+
+--Display the database ordered by price.
+SELECT * FROM shoes 
+ORDER BY price;
+
+--what is the average price of high tops?
+SELECT AVG(price) high_top_avg 
+FROM shoes
+WHERE style = "high_top";
+
+--What are the most 3 popular shoes?
+SELECT brand, price, style
+FROM shoes 
+ORDER BY popularity DESC
+LIMIT 3;
